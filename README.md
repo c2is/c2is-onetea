@@ -31,18 +31,19 @@
 	
 ## List of components
 ### LESS / CSS
-> "c2is-less": "git@github.com:c2is/c2is-less-component.git"
-> "normalize": "git@github.com:necolas/normalize.git
+"c2is-less": "git@github.com:c2is/c2is-less-component.git"<br>
+"normalize": "git@github.com:necolas/normalize.git
 
 ### PHP
-> "Mobile-Detect": "git@github.com:serbanghita/mobile-detect.git"
+"Mobile-Detect": "git@github.com:serbanghita/mobile-detect.git"
 
 ### JS - LIB
-> "jquery": "git@github.com:jquery/jquery.git"
-> "jquery-ui": "git@github.com:jquery/jquery-ui.git"
-> "modernizr": "git@github.com:modernizr/modernizr"
-> "headjs": "git@github.com:headjs/headjs.git"
-> "selectivizr": "git@github.com:keithclark/selectivizr.git"
+"jquery": "git@github.com:jquery/jquery.git"<br>
+"jquery-ui": "git@github.com:jquery/jquery-ui.git"<br>
+"modernizr": "git@github.com:modernizr/modernizr"<br>
+"headjs": "git@github.com:headjs/headjs.git"<br>
+"selectivizr": "git@github.com:keithclark/selectivizr.git"
 
 ### JS - PLUGIN
-> "colorbox": "git@github.com:jackmoore/colorbox.git"
+"colorbox": "git@github.com:jackmoore/colorbox.git"
+
