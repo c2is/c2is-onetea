@@ -1,49 +1,48 @@
 # c2is-onetea
 =====
 
-<table style="width:100%">
-	<tr>
-		<td colspan="2">/css/</td>
-		<td>mq.less<br>plugins.less<br>print.less<br>screen.less</td>
-	</tr>
-	<tr>
-		<td rowspan="2">/html/</td>
-		<td>/include/</td>
-		<td>bottom.php<br>functions.php<br>inc_footer.php<br>inc_header.php<br>top.php</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td>01_home.php<br>index.php</td>
-	</tr>
-	<tr>
-		<td colspan="2">/images/</td>
-		<td>/commmon/<br>/dyn/</td>
-	</tr>
-	<tr>
-		<td colspan="2">/js/</td>
-		<td>front.js</td>
-	</tr>
-	<tr>
-		<td colspan="3">component.json</td>
-	</tr>
-</table>
+## Objectifs
+L'objectif de C2iS-OneTea est de mettre en place un kick-off, un kick starter, un boilerplate, un bootstrap, etc., enfin peut importe le nom, l'objectif est d'avoir une structure simple, rapide à déployer.
+
+Une page html (php, avec ses includes pour le header et le footer), un dossier css (avec quelques fichiers less de base), un dossier js (avec un fichier d'éxé) et un dossier image.
+
+
+## Mise en place
+Pour démarrer un projet, il faut : 
+	- NodeJs d'installé avec NPM
+	- Avoir installé les packages "Bower" & "Lessc" (si compilation less avec lessC, sinon compiler GUI)
+	- Initier son projet avec les fichiers de C2iS-OneTea
+	- Modifier component.json avec les composants souhaités
+	- Lancer la commande Bower Install
+
+## Usages
+Les composants installés par Bower sont installés dans le projet et doivent être appelés dans le DOM:
+	- inc_header pour les css et headJS par exemple
+	_ inc_footer pour les JS (avec ou sans head.ready)
+
+_Best Practice_ : minifier, combiner, versionner et cacher les CSS et les JS <br>
+Utilisation des appels standards Drupal : AddCSS / AddJS ; utilisation de CSS-JS-Booster (https://github.com/Schepp/CSS-JS-Booster) ; etc.
+
 	
 ## List of components
 ### LESS / CSS:
 
-    "c2is-less": "git@github.com:c2is/c2is-less-component.git"<br>
+    "c2is-less": "git@github.com:c2is/c2is-less-component.git"
     "normalize": "git@github.com:necolas/normalize.git
 
 ### PHP
     "Mobile-Detect": "git@github.com:serbanghita/mobile-detect.git"
 
 ### JS - LIB
-    "jquery": "git@github.com:jquery/jquery.git"<br>
-    "jquery-ui": "git@github.com:jquery/jquery-ui.git"<br>
-    "modernizr": "git@github.com:modernizr/modernizr"<br>
-    "headjs": "git@github.com:headjs/headjs.git"<br>
+    "jquery": "git@github.com:jquery/jquery.git"
+    "jquery-ui": "git@github.com:jquery/jquery-ui.git"
+    "modernizr": "git@github.com:modernizr/modernizr"
+    "headjs": "git@github.com:headjs/headjs.git"
     "selectivizr": "git@github.com:keithclark/selectivizr.git"
 
 ### JS - PLUGIN
-    "colorbox": "git@github.com:jackmoore/colorbox.git"
+    "jquery.colorbox": "git@github.com:jackmoore/colorbox.git"
+	"jquery.TipTip": "git://github.com/drewwilson/TipTip.git"
+	"jquery.jScrollPane": "git://github.com/vitch/jScrollPane.git"
+
 
