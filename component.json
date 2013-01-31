@@ -1,0 +1,8 @@
+{
+	"name": "c2is-onetea",
+	"version": "1.0",
+	"main": "./path/to/main.css",
+	"dependencies": {
+		"c2is-less": "git@github.com:c2is/c2is-less-component.git"
+	}
+}
