@@ -2,21 +2,21 @@
 =====
 
 ## Objectifs
-L'objectif de C2iS-OneTea est de mettre en place un kick-off, un kick starter, un boilerplate, un bootstrap, etc., enfin peu importe le nom, l'objectif est d'avoir une structure simple, rapide � d�ployer.
+L'objectif de C2iS-OneTea est de mettre en place un kick-off, un kick starter, un boilerplate, un bootstrap, etc., enfin peu importe le nom, l'objectif est d'avoir une structure simple, rapide à déployer.
 
-Une page html (php, avec ses includes pour le header et le footer), un dossier css (avec quelques fichiers less de base), un dossier js (avec un fichier d'�x�) et un dossier image.
+Une page html (php, avec ses includes pour le header et le footer), un dossier css (avec quelques fichiers less de base), un dossier js (avec un fichier d'éxé) et un dossier image.
 
 
 ## Mise en place
-Pour d�marrer un projet, il faut : 
-	- NodeJs d'install� avec NPM
-	- Avoir install� les packages "Bower" & "Lessc" (si compilation less avec lessC, sinon compiler GUI)
+Pour démarrer un projet, il faut : 
+	- Avoir installé NodeJs avec NPM
+	- Avoir installé les packages "Bower" & "Lessc" (si compilation less avec lessC, sinon compiler GUI)
 	- Initier son projet avec les fichiers de C2iS-OneTea
-	- Modifier component.json avec les composants souhait�s
+	- Modifier component.json avec les composants souhaités
 	- Lancer la commande Bower Install
 
 ## Usages
-Les composants install�s par Bower sont install�s dans le projet et doivent �tre appel�s dans le DOM:
+Les composants installés par Bower sont installés dans le projet et doivent être appelés dans le DOM:
 	- inc_header pour les css et headJS par exemple
 	_ inc_footer pour les JS (avec ou sans head.ready)
 
@@ -42,7 +42,7 @@ Utilisation des appels standards Drupal : AddCSS / AddJS ; utilisation de CSS-JS
 
 ### JS - PLUGIN
     "jquery.colorbox": "git@github.com:jackmoore/colorbox.git"
-	"jquery.TipTip": "git://github.com/drewwilson/TipTip.git"
-	"jquery.jScrollPane": "git://github.com/vitch/jScrollPane.git"
+    "jquery.TipTip": "git://github.com/drewwilson/TipTip.git"
+    "jquery.jScrollPane": "git://github.com/vitch/jScrollPane.git"
 
 
