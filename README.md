@@ -1,7 +1,7 @@
 # c2is-onetea
 =====
 
-<table>
+<table style="width:100%">
 	<tr>
 		<td colspan="2">/css/</td>
 		<td>mq.less<br>plugins.less<br>print.less<br>screen.less</td>
