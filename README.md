@@ -9,21 +9,21 @@ Une page html (php, avec ses includes pour le header et le footer), un dossier c
 
 ## Mise en place
 Pour démarrer un projet, il faut : 
-	- Avoir installé NodeJs avec NPM
-	- Avoir installé les packages "Bower" & "Lessc" (si compilation less avec lessC, sinon compiler GUI)
-	- Initier son projet avec les fichiers de C2iS-OneTea
-	- Modifier component.json avec les composants souhaités
-	- Lancer la commande Bower Install
+    - Avoir installé NodeJs avec NPM
+    - Avoir installé les packages "Bower" & "Lessc" (si compilation less avec lessC, sinon compiler GUI)
+    - Initier son projet avec les fichiers de C2iS-OneTea via https://github.com/c2is/onetea-shell-utility
+    - Modifier component.json avec les composants souhaités
+    - Lancer la commande Bower Install pour éxécuter le component.json
 
 ## Usages
 Les composants installés par Bower sont installés dans le projet et doivent être appelés dans le DOM:
-	- inc_header pour les css et headJS par exemple
-	_ inc_footer pour les JS (avec ou sans head.ready)
+    - inc_header pour les css et headJS par exemple
+    _ inc_footer pour les JS (avec ou sans head.ready)
 
 _Best Practice_ : minifier, combiner, versionner et cacher les CSS et les JS <br>
 Utilisation des appels standards Drupal : AddCSS / AddJS ; utilisation de CSS-JS-Booster (https://github.com/Schepp/CSS-JS-Booster) ; etc.
 
-	
+
 ## List of components
 ### LESS / CSS:
 
