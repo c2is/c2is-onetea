@@ -8,42 +8,4 @@ Une page html (php, avec ses includes pour le header et le footer), un dossier c
 
 
 ## Mise en place
-Pour démarrer un projet, il faut : <br>
-    - Avoir installé NodeJs avec NPM<br>
-    - Avoir installé les packages "Bower" & "Lessc" (si compilation less avec lessC, sinon compiler GUI)<br>
-    - Initier son projet avec les fichiers de C2iS-OneTea via https://github.com/c2is/onetea-shell-utility<br>
-    - Modifier component.json avec les composants souhaités<br>
-    - Lancer la commande Bower Install pour éxécuter le component.json
-
-## Usages
-Les composants installés par Bower sont installés dans le projet et doivent être appelés dans le DOM:<br>
-    - inc_header pour les css et headJS par exemple<br>
-    - inc_footer pour les JS (avec ou sans head.ready)
-
-_Best Practice_ : minifier, combiner, versionner et cacher les CSS et les JS <br>
-    - Utilisation des appels standards Drupal : AddCSS / AddJS ;<br>
-    - Utilisation de CSS-JS-Booster (https://github.com/Schepp/CSS-JS-Booster) ; etc.
-
-
-## List of components
-### LESS / CSS:
-
-    "c2is-less": "git@github.com:c2is/c2is-less-component.git"
-    "normalize": "git@github.com:necolas/normalize.git
-
-### PHP
-    "Mobile-Detect": "git@github.com:serbanghita/mobile-detect.git"
-
-### JS - LIB
-    "jquery": "git@github.com:jquery/jquery.git"
-    "jquery-ui": "git@github.com:jquery/jquery-ui.git"
-    "modernizr": "git@github.com:modernizr/modernizr"
-    "headjs": "git@github.com:headjs/headjs.git"
-    "selectivizr": "git@github.com:keithclark/selectivizr.git"
-
-### JS - PLUGIN
-    "jquery.colorbox": "git@github.com:jackmoore/colorbox.git"
-    "jquery.TipTip": "git://github.com/drewwilson/TipTip.git"
-    "jquery.jScrollPane": "git://github.com/vitch/jScrollPane.git"
-
-
+Pour mettre en place C2iS-OneTea, vous pouvez vous référer [à la documentation (wiki)](https://github.com/c2is/c2is-onetea/wiki) ( https://github.com/c2is/c2is-onetea/wiki )
