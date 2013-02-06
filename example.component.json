@@ -2,7 +2,7 @@
 	"name": "c2is-onetea",
 	"version": "1.0.0",
 	"dependencies": {
-		"c2is-less": "git@github.com:c2is/c2is-less-component.git",
+		"c2is-less": "http://github.com/c2is/c2is-less-component.git",
         "jquery": "~1.8.3",
         "modernizr": "https://raw.github.com/josh/sprockets-modernizr/2.6.2/modernizr.js"
 	}
