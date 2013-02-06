@@ -1,16 +1,17 @@
 /*PLUGINS JS*/
 
 /*PLACEHOLDER*/
-*::-webkit-input-placeholder { color:@colorGris1; }
-*::-moz-placeholder { color:@colorGris1; }
-*:-moz-placeholder { color:@colorGris1; }
-*:-ms-placeholder { color:@colorGris1; }
-*.placeholder { color:@colorGris1; }
+@colorPlaceholder: #000;
+*::-webkit-input-placeholder { color:@colorPlaceholder; }
+*::-moz-placeholder { color:@v; }
+*:-moz-placeholder { color:@v; }
+*:-ms-placeholder { color:@colorPlaceholder; }
+*.placeholder { color:@colorPlaceholder; }
     /* :focus - lighten() for dark bg & light text || darken() for light bg & dark text */
-    *:focus::-webkit-input-placeholder{color:lighten(@colorGris1, 50%);-webkit-transition:all .5s ease;}
-    *:focus::-moz-placeholder{color:lighten(@colorGris1, 50%);transition:all .5s ease;}
-    *:focus:-moz-placeholder{color:lighten(@colorGris1, 50%);transition:all .5s ease;}
-    *:focus:-ms-placeholder{color:lighten(@colorGris1, 50%);transition:all .5s ease;}
+    *:focus::-webkit-input-placeholder{color:lighten(@colorPlaceholder, 50%);-webkit-transition:all .5s ease;}
+    *:focus::-moz-placeholder{color:lighten(@colorPlaceholder, 50%);transition:all .5s ease;}
+    *:focus:-moz-placeholder{color:lighten(@colorPlaceholder, 50%);transition:all .5s ease;}
+    *:focus:-ms-placeholder{color:lighten(@colorPlaceholder, 50%);transition:all .5s ease;}
 	
 
 /* LINK PARENT */
