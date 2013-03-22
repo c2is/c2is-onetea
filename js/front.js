@@ -39,10 +39,12 @@ $(function() { //domReady
  *   - arrayShuffle
  *   - scrollstart / scrollstop
  *   - jQuery Extra Selectors
+ *   - maxZIndex
+ *   - equalizeHeights
  *
  * */
  
-// gestion des différentes valeurs css3 dépendantes du userAgent (transition, transform, animation,...)
+// gestion des diffï¿½rentes valeurs css3 dï¿½pendantes du userAgent (transition, transform, animation,...)
 var transEndEventName = getUserAgentElementName('transEndEventName');
 function getUserAgentElementName(sName){ 
     var userAgentElementNames = {
@@ -60,9 +62,7 @@ function getUserAgentElementName(sName){
 }
 
 
-
-
-// Gestion du console.log (évite le bug sur ie si la console n'est pas ouverte)
+// Gestion du console.log (ï¿½vite le bug sur ie si la console n'est pas ouverte)
 function consoleLog (data) {
     if(window.console && console.log )
         console.log(data);
@@ -92,7 +92,6 @@ function polyfillPlaceholder(){
 }
 
 
-
 function scrollTo(sTarget,iSpeed){ // animated scroll
     var sTarget = sTarget != undefined ? sTarget : '#wrap',
         iSpeed = iSpeed != undefined ? iSpeed : 500;
@@ -112,7 +111,6 @@ function scrollTo(sTarget,iSpeed){ // animated scroll
             && y <= bounds.bottom
             && y >= bounds.top;
     };
-
 
 
 // Gestion du click sur le parent
@@ -237,6 +235,7 @@ function scrollTo(sTarget,iSpeed){ // animated scroll
 
 })(jQuery);
 
+
 /*
  * jQuery Extra Selectors - (c) Keith Clark freely distributable under the terms of the MIT license.
  *
@@ -313,8 +312,6 @@ function scrollTo(sTarget,iSpeed){ // animated scroll
 }(jQuery));
 
 
-
-
 /* maxZIndex */
 $.maxZIndex = $.fn.maxZIndex = function(opt) {
     /// <summary>
@@ -342,6 +339,15 @@ $.maxZIndex = $.fn.maxZIndex = function(opt) {
         $(this).css("z-index", zmax);
     });
 }
+
+// equalize the heights of several elements
+$.fn.equalizeHeights = function() {
+    var maxHeight = this.map(function(i,e) {
+        return $(e).height();
+    }).get();
+
+    return this.height( Math.max.apply(this, maxHeight) );
+};
 
 
 
