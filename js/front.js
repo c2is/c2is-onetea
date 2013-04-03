@@ -143,7 +143,7 @@ function scrollTo(sTarget,iSpeed){ // animated scroll
                                 document.location.href = sHref;
                                 break;
                             default:
-                                sTarget.location.href = sHref;
+                                eval(sTarget + '.location.href = sHref');
                                 break;
                         }
                     }
