@@ -10,19 +10,26 @@
 
 /* LAYOUT */
 
+//Generic
+
 //Header
-header{position:fixed;top:0;width:100%;height:40px;line-height:40px;text-align:center;background:@colorBlack;
+@headerHeight:40px;
+header{position:fixed;top:0;width:100%;height:@headerHeight;line-height:@headerHeight;text-align:center;background:@colorBlack;
+    &.fixed ~ .content{padding-top:@headerHeight}
     a{display:block;color:@colorWhite;text-decoration:none}
 }
 
 //footer
-footer{position:fixed;bottom:0;width:100%;height:40px;line-height:40px;text-align:center;background:@colorBlack;
+@footerHeight:40px;
+footer{position:fixed;bottom:0;width:100%;height:@footerHeight;line-height:40px;text-align:center;background:@colorBlack;
     p{color:@colorWhite;}
 }
 
-header.fixed ~ .content{padding-top:40px}
 
-
+//content
+.content{
+    &.footerActif{padding-bottom:@footerHeight}
+}
 
 /* /LAYOUT */
 
