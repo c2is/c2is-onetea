@@ -1,0 +1,10 @@
+{
+	"name": "oneTea-Mobile",
+	"version": "1.0.0",
+	"dependencies": {
+		"c2is-less": "http://github.com/c2is/c2is-less-component.git",
+        "jquery": "2.0.0",
+        "modernizr": "https://raw.github.com/josh/sprockets-modernizr/2.6.2/modernizr.js",
+        "ratchet": "ratchet"
+	}
+}

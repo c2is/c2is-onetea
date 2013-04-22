@@ -1,3 +1,3 @@
-<footer>
-    &copy; C2iS
+<footer class="fixed">
+
 </footer>

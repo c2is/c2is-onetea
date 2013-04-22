@@ -1,14 +1,14 @@
 
 <?php
-    $title = 'YOUR PROJECT HERE';
+    $title = 'oneTea Mobile - Home';
     include('includes/inc_header.php');
 ?>
 	<div class="wrap" id="wrap">
 
         <?php include('includes/top.php'); ?>
 
-        <section class="clearer">
-            Content goes here
+        <section class="content clearer">
+            <a href="02_page-test.php" title="Page test" data-transition="slide-in">Page test</a>
         </section>
 
         <?php include('includes/bottom.php'); ?>

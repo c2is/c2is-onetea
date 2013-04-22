@@ -1,9 +1,10 @@
-	<script src="../js/front.js"></script>
-
-	<!-- Prompt IE 6 users to install Chrome Frame -->
-	<!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-	<![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {
+            document.write(unescape("%3Cscript src='../components/jquery/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
+    <script src="../js/all.libs.min.js"></script>
+    <script src="../js/front.js"></script>
 </body>
 </html>

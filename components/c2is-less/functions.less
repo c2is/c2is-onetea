@@ -1,0 +1,172 @@
+._opacity(@opacity:1) {
+    @opacityPercentage: @opacity * 100;
+    opacity: @opacity;
+    filter: ~"alpha(opacity = @{opacityPercentage})"; // IE 6 & 7
+    -ms-filter:~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{opacityPercentage})"; // IE 8+
+}
+
+
+._rgbaBgColor(@colour, @alpha)
+{
+    @alphaColour: hsla(hue(@colour), saturation(@colour), lightness(@colour), @alpha);
+    @ieAlphaColour: argb(@alphaColour);
+
+    background-color: @colour; // Fallback for older browsers
+
+// IE hacks
+    zoom: 1; // hasLayout
+    background-color: transparent\9;
+    -ms-filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieAlphaColour}, endColorstr=@{ieAlphaColour})"; // IE 8+
+    filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieAlphaColour}, endColorstr=@{ieAlphaColour})"; // IE 6 & 7
+
+// put in last to prevent conflict with IE 8 and IE 10
+    background-color: @alphaColour;
+}
+._border-radius(@radius:@radius) {
+    -webkit-border-radius: @radius;
+    border-radius: @radius
+}
+._box-shadow(@shadow:3px 3px 10px 0px rgba(0,0,0,0.3)) {
+    -webkit-box-shadow: @shadow ;
+    box-shadow: @shadow;
+}
+._text-shadow(@blur:10px, @horz:0px, @vert:0px, @rgba:rgba(0,0,0,0.7), @offx:0, @offy:0, @hex:#666) {
+    text-shadow: @horz @vert @blur @rgba;
+//filter: glow(color=@hex,strength=@blur);
+//filter: dropshadow(color=@hex, offx=@offx, offy=@offy);
+}
+._transform(@transform) {
+    -webkit-transform:@transform;
+    -moz-transform:@transform;
+    -ms-transform:@transform;
+    -o-transform:@transform;
+    transform:@transform;
+}
+._transition(@transition:all ease .4s){
+    -webkit-transition: @transition;
+    -moz-transition: @transition;
+    -ms-transition: @transition;
+    -o-transition: @transition;
+    transition: @transition;
+}
+._multi-transition(@value1,@value2:all ease .4s,...){
+    @value: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
+    -webkit-transition: @value;
+    -moz-transition: @value;
+    -ms-transition: @value;
+    -o-transition: @value;
+    transition: @value;
+}
+._transition-property(@transitionProperty:all) {
+    -webkit-transition-property:@transitionProperty;
+    -moz-transition-property:@transitionProperty;
+    -ms-transition-property:@transitionProperty;
+    -o-transition-property:@transitionProperty;
+    transition-property:@transitionProperty;
+}
+._transition-duration(@transitionDuration:.4s) {
+    -webkit-transition-duration:@transitionDuration;
+    -moz-transition-duration:@transitionDuration;
+    -ms-transition-duration:@transitionDuration;
+    -o-transition-duration:@transitionDuration;
+    transition-duration:@transitionDuration;
+}
+._transition-timing-function(@transitionTimingFunction:ease-out) {
+    -webkit-transition-timing-function:@transitionTimingFunction;
+    -moz-transition-timing-function:@transitionTimingFunction;
+    -ms-transition-timing-function:@transitionTimingFunction;
+    -o-transition-timing-function:@transitionTimingFunction;
+    transition-timing-function:@transitionTimingFunction;
+}
+._box-sizing(@sizing:border-box) {
+    -webkit-box-sizing:@sizing;
+    -moz-box-sizing:@sizing;
+    -ms-box-sizing:@sizing;
+    -o-box-sizing:@sizing;
+    box-sizing:@sizing;
+}
+
+/* ajout des fonctions gradiant */
+._gradiant-horizontal(@startColor, @endColor) {
+    background-color: @endColor; /* Old browsers */
+    background-repeat: no-repeat;
+    background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(right center, @startColor, @endColor);
+    background-image: -moz-linear-gradient(right center, @startColor, @endColor);
+    background-image: -o-linear-gradient(left,  @startColor,  @endColor);
+    background-image: -khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+    filter: e(%("progid:DXImageTransform.Microsoft.Gradient(StartColorStr='%d', EndColorStr='%d', GradientType=1)",@startColor,@endColor));
+    -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=1))",@startColor,@endColor);
+}
+
+._gradiant-vertical(@startColor, @endColor) {
+    background-color: @endColor; /* Old browsers */
+    background-repeat: no-repeat;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(@startColor, @endColor);
+    background-image: -moz-linear-gradient(@startColor, @endColor);
+    background-image: -o-linear-gradient(top,  @startColor,  @endColor);
+    background-image: -khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    filter: e(%("progid:DXImageTransform.Microsoft.Gradient(StartColorStr='%d', EndColorStr='%d', GradientType=0)",@startColor,@endColor));
+    -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=0))",@startColor,@endColor);
+}
+
+._gradiant-vertical-three-colors(@startColor, @midColor, @colorStop, @endColor) {
+    background-color: @endColor; /* Old browsers */
+    background-repeat: no-repeat;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @midColor), to(@endColor));
+    background-image: -webkit-linear-gradient(@startColor, color-stop(@colorStop, @midColor), @endColor);
+    background-image: -moz-linear-gradient(@startColor, color-stop(@midColor, @colorStop), @endColor);
+    filter: e(%("progid:DXImageTransform.Microsoft.Gradient(StartColorStr='%d', EndColorStr='%d', GradientType=0)",@startColor,@endColor)); /* IE6-8 fallback on vertical gradient */
+    -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=0))",@startColor,@endColor); /* IE9 fallback on vertical gradient */
+}
+._gradiant-diagonal-LTtRB(@startColor, @endColor) {
+    background: @startColor; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  @startColor 0%, @endColor 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,@startColor), color-stop(100%,@endColor)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg,  @startColor 0%,@endColor 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg,  @startColor 0%,@endColor 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg,  @startColor 0%,@endColor 100%); /* IE10+ */
+    background: linear-gradient(135deg,  @startColor 0%,@endColor 100%); /* W3C */
+    filter: e(%("progid:DXImageTransform.Microsoft.Gradient(StartColorStr='%d', EndColorStr='%d', GradientType=1)",@startColor,@endColor)); /* IE6-8 fallback on horizontal gradient */
+    -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=1))",@startColor,@endColor); /* IE9 fallback on horizontal gradient */
+}
+._gradiant-diagonal-LBtRT(@startColor, @endColor) {
+    background: @startColor; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  @startColor 0%, @endColor 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,@startColor), color-stop(100%,@endColor)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  @startColor 0%,@endColor 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  @startColor 0%,@endColor 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  @startColor 0%,@endColor 100%); /* IE10+ */
+    background: linear-gradient(45deg,  @startColor 0%,@endColor 100%); /* W3C */
+    filter: e(%("progid:DXImageTransform.Microsoft.Gradient(StartColorStr='%d', EndColorStr='%d', GradientType=1)",@startColor,@endColor)); /* IE6-8 fallback on horizontal gradient */
+    -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=1))",@startColor,@endColor); /* IE9 fallback on horizontal gradient */
+}
+
+/* Ajout du clearfix si impossible d'ajouter la class clear dans le code */
+._clear() {zoom: 1;
+    &:before, &:after { content: ""; display: table; }
+    &:after { clear: both; }
+}
+/* Centrer verticalement dans un conteneur de hauteur fixe */
+._verticalCenter(@height, @lineHeight:auto) {
+  height: @height;                                                            /* Centrer verticalement une ligne de texte */
+  line-height: @height;
+      &>* {vertical-align:middle;display:inline-block;line-height:@lineHeight;}   /* Centrer verticalement plusieurs lignes de texte */
+  &>img {vertical-align:middle;}                                              /* Centrer verticalement une image de taille variable */
+}
+
+/*
+ * definie une hauteur fixe à un bloc en fonction du nombre maximum de lignes et du line-height et ajout un overflow hidden par defaut
+ * @params :
+ * - @nbLine :          integer |   Obligatoire                  |  nombre de lignes désirés
+ * - @lineHeight :      string  |   Obligatoire (em, px, %)      |  hauteur de chaque ligne
+ * - @adjust :          float   |   Optionel [default : 0 ]      |  decalage de la hauteur pour ajuster en fonction des typo
+ * - @overflow :        string  |   Optionel [default : hidden ] |  règle l'overflow si besoin
+ */
+._maxLineHeight(@nbLine,@lineHeight,@adjust:0,@overflow:hidden){
+    line-height: @lineHeight;
+    height: (@nbLine*@lineHeight) - @adjust ;
+    overflow: @overflow;
+}
+

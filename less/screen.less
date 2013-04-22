@@ -1,18 +1,23 @@
-/* Project: NOMPROJET - Date: 20120806 - Author: C2iS.fr > TRI */
+/* Project: oneTea Mobile - Date: 20130419 - Author: C2iS.fr > DJO */
 
 // Import functions + reset
-//@import "../components/c2is-less/functions.less";
-//@import "../components/c2is-less/reset.less";
+@import "../components/c2is-less/functions.less";
+@import "../components/c2is-less/reset.less";
 
 /* LAYOUT */
-	body{margin:0 auto;min-width:1000px;background:#fff;font:1em/1.2em sans-serif;}
+header{position:fixed;top:0;width:100%;height:40px;line-height:40px;text-align:center;background:#000;
+    a{display:block;color:#fff;text-decoration:none}
+}
+
+header.fixed ~ .content{padding-top:40px}
+
 
 
 /* /LAYOUT */
 
-
 /*Import Plugins styles*/
 @import "plugins.less";
+@import "../components/c2is-less/mq.less";
 
 /*Import Print*/
 @import "print.less";

@@ -21,7 +21,7 @@ closedir($dir);
 
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{PROJECT NAME}</title>
+    <title>oneTea Mobile</title>
 
     <meta name="description" content="">
     <meta name="author" content="C2iS">
@@ -47,7 +47,7 @@ closedir($dir);
     <header>
         <img src="http://ipsumimage.appspot.com/100x100?b=acb1b0&f=fefefe&l=logo" alt="">
         <h1>PROJECT NAME</h1>
-        <h2>Lead FE : TRI@c2is</h2>
+        <h2>Lead FE : DJO@c2is</h2>
     </header>
     <section>
         <?php 
