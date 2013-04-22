@@ -66,7 +66,7 @@ function consoleLog (data) {
 function ratchetPush() {
     if ( mobileCheck == false ) {
         $('[data-transition]').attr('data-ignore', 'push');
-        $('.fixed').css({'position':'absolute'});
+        $('.fixed').css({'position':'relative'}).removeClass('fixed');
     }else{
         $('#wrap').after('<script src="../components/ratchet/lib/js/push.js"></script>');
         $('head').append('<link rel="stylesheet" href="../components/ratchet/lib/css/push.css">');
