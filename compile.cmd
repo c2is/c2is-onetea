@@ -7,4 +7,4 @@
 /* Ex: uglifyjs components/jquery-ui/ui/jquery.ui.core.js -o js/jqui.min.js */
 /* Ex: uglifyjs components/jquery/jquery.js js/jqui.min.js components/jquery.colorbox/jquery.colorbox.js -o js/plugins.min.js */
 
-uglifyjs components/modernizr/index.js -o js/all.libs.min.js
+uglifyjs components/jquery/jquery.min.js components/modernizr/index.js -o js/all.libs.min.js

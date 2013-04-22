@@ -9,7 +9,9 @@
 
         <!-- si le footer fixed est present on pose une classe footerActif -->
         <section class="content footerActif clearer">
-            <a href="02_page-test.php" title="Page test" data-transition="slide-in">Page test</a>
+            <ul class="list">
+                <li><a href="02_page-test.php" title="Page test" data-transition="slide-in">Page test</a></li>
+            </ul>
         </section>
 
         <?php include('includes/bottom.php'); ?>
