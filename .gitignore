@@ -1,1 +1,8 @@
-/.idea/
+# Ignore apple's hidden files
+.DS_Store
+
+# Ignore phpStorm.
+.idea
+
+# Ignore components
+components/
