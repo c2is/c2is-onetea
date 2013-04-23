@@ -64,8 +64,8 @@ function ratchetPush() {
         $('.fixed').css({'position':'relative'}).removeClass('fixed');
         $('.footerActif').removeClass('footerActif');
     }else{
-        $('#wrap').after('<script src="../components/ratchet/lib/js/push.js"></script>');
         $('head').append('<link rel="stylesheet" href="../components/ratchet/lib/css/push.css">');
+        $('body').append('<script src="../components/ratchet/lib/js/push.js"></script>');
 
         //si bottom bar fixed on pose une classe footerActif sur le content pour impacter le padding-bottom
         if ( $('footer.fixed').length || $('.content').hasClass('footerActif')) {
