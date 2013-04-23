@@ -1,6 +1,7 @@
 /* Project: oneTea Mobile - Date: 20130419 - Author: C2iS.fr > DJO */
 
-var mobileCheck = false; //variable globale
+var mobileCheck = false, //si je suis un mobile
+    oldMobile = true;   //si je suis un mobile dont iOS < 5 ou Android < 3
 
 $(function() { //domReady
 
@@ -9,11 +10,13 @@ $(function() { //domReady
     // ScrollTop onload (mobile) si il n'y a pas d'ancre
     if(/mobile/i.test(navigator.userAgent)){
         window.scrollTo(0, 1);
+        mobileCheck = true;
 
         //older OS versions (iOS < 5 & Android < 3)
         if (Modernizr.inlinesvg) {
-            mobileCheck = true;
+            oldMobile = false;
             window.addEventListener('push', function() {
+                footerFixed();
                 window.scrollTo(0, 1);
             })
         }
@@ -24,6 +27,11 @@ $(function() { //domReady
 
     //manage push links (Ratchet specific)
     ratchetPush();
+
+    //svg fallback
+    if (!Modernizr.svg) {
+        svgFallback();
+    }
 
 
 
@@ -59,17 +67,34 @@ function consoleLog (data) {
 
 //ratchetPush manager
 function ratchetPush() {
-    if ( mobileCheck == false ) {
+    if (mobileCheck == false) {
         $('[data-transition]').attr('data-ignore', 'push');
         $('.fixed').css({'position':'relative'}).removeClass('fixed');
         $('.footerActif').removeClass('footerActif');
-        $('.ratchetPush').remove();
     }else{
-        //si bottom bar fixed on pose une classe footerActif sur le content pour impacter le padding-bottom
-        if ( $('footer.fixed').length || $('.content').hasClass('footerActif')) {
-            $('.content').addClass('footerActif');
-        }
+        $('head').append('<link rel="stylesheet" href="../components/ratchet/lib/css/push.css">');
+        $('body').append('<script src="../components/ratchet/lib/js/push.js"></script>');
+        footerFixed();
     }
+}
+
+//gestion d'un footer en fixed
+function footerFixed() {
+    //si bottom bar fixed on pose une classe footerActif sur le content pour impacter le padding-bottom
+    if ( $('footer.fixed').length) {
+        $('.content').addClass('footerActif');
+    }
+}
+
+//svg fallback
+function svgFallback() {
+    //mettre un data-fallback sur la balise img avec l'url de l'image de remplacement
+    $('img[src*="svg"]').each(function() {
+        $(this).attr("src", $(this).data("fallback"));
+    });
+
+
+
 }
 
 
