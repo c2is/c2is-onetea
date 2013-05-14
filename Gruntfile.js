@@ -44,18 +44,9 @@ module.exports = function(grunt) {
           ]
         }
       }
-    },
-
-    copy: {
-      main: {
-        files: [
-          {expand: true, src: ['vendors/oneTea/**'], dest: '/'}
-        ]
-      }
     }
   });
 
-  grunt.loadNpmTasks('grunt-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-recess');
