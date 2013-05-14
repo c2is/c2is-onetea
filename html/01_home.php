@@ -8,7 +8,7 @@
         <?php include('includes/top.php'); ?>
 
         <section class="clearer">
-            Content goes here
+            <p>Content goes here</p>
         </section>
 
         <?php include('includes/bottom.php'); ?>

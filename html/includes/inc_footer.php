@@ -1,4 +1,5 @@
-	<script src="../js/front.js"></script>
+	<script src="../js/vendors.min.js"></script>
+	<script src="../js/front.min.js"></script>
 
 	<!-- Prompt IE 6 users to install Chrome Frame -->
 	<!--[if lt IE 7 ]>
