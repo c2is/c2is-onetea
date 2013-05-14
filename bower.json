@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "oneTea": "git://github.com/c2is/c2is-onetea.git",
+    "jquery": "~1.9.1",
+    "modernizr-latest": "http://modernizr.com/downloads/modernizr-latest.js",
+    "normalize-css": "~2.1.0"
+  }
+}
