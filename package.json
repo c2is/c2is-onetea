@@ -2,6 +2,7 @@
   "name": "C2iS-OneTea",
   "version": "2.0.0",
   "devDependencies": {
+    "grunt-contrib-copy": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-recess": "latest",
