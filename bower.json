@@ -1,4 +1,6 @@
 {
+  "name": "c2is-onetea",
+  "version": "2.0.0",
   "dependencies": {
     "jquery": "~1.9.1",
     "modernizr-latest": "http://modernizr.com/downloads/modernizr-latest.js",

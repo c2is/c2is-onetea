@@ -1,4 +1,6 @@
 {
+  "name": "c2is-onetea",
+  "version": "2.0.0",
   "devDependencies": {
     "grunt-contrib-watch": "latest",
     "grunt-contrib-uglify": "latest",
