@@ -6,8 +6,14 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     watch: {
-      files: ['less/*', 'js/*'],
-      tasks: ['minjscss']
+      less: {
+        files: 'less/*.less',
+        tasks: ['mincss']
+      },
+      js: {
+        files: 'js/*.js',
+        tasks: ['minjs']
+      }
     },
 	
 	smushit:{
@@ -22,13 +28,13 @@ module.exports = function(grunt) {
           'vendors/modernizr-latest/index.js',
           'vendors/jquery/jquery.js'
         ],
-        dest: 'js/vendors.min.js'
+        dest: 'js/min/vendors.min.js'
       }, 
 	  front: {
 		src: [
 			'js/front.js'
 		],
-		dest: 'js/front.min.js'
+		dest: 'js/min/front.min.js'
 	  }
     },
 
@@ -52,11 +58,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-smushit');
 
-  grunt.registerTask('default', ['recess','uglify','watch']);
-  grunt.registerTask('mincss', ['recess']);
-  grunt.registerTask('minjs', ['uglify']);
-  grunt.registerTask('minjs:vendors', ['uglify:vendors']);
-  grunt.registerTask('minjs:front', ['uglify:front']);
-  grunt.registerTask('smushit', ['smushit']);
+  grunt.registerTask('default', ['recess','uglify']);
+  grunt.registerTask('mincss', 'recess');
+  grunt.registerTask('minjs', 'uglify');
+  grunt.registerTask('minjs:vendors', 'uglify:vendors');
+  grunt.registerTask('minjs:front', 'uglify:front');
   grunt.registerTask('minjscss', ['recess','uglify:front']);
 };
