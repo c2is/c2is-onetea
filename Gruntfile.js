@@ -23,9 +23,12 @@ module.exports = function(grunt) {
 	},
 
     uglify: {
+      modernizr: {
+        src: 'vendors/modernizr/modernizr.js',
+        dest: 'js/min/modernizr.min.js'
+      },
       vendors: {
         src: [
-          'vendors/modernizr-latest/index.js',
           'vendors/jquery/jquery.js'
         ],
         dest: 'js/min/vendors.min.js'

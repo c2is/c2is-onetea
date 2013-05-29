@@ -1,6 +1,6 @@
-
 <?php
     $title = 'YOUR PROJECT HERE';
+    $lang = 'fr';
     include('includes/inc_header.php');
 ?>
 	<div class="wrap" id="wrap">
