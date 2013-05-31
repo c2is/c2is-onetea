@@ -5,6 +5,7 @@
     "grunt-contrib-watch": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-recess": "latest",
-    "grunt-smushit": "latest"
+    "grunt-smushit": "latest",
+    "grunt-css-img-2-data-uri": "latest"
   }
 }
