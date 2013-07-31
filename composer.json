@@ -1,0 +1,13 @@
+{
+    "name": "c2is/onetea",
+    "type": "front-end-starter",
+    "description": "OneTea",
+    "keywords": [],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Laurent Guitton",
+            "email": "l.guitton@c2is.fr"
+        }
+    ]
+}
