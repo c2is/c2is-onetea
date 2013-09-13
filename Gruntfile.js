@@ -55,7 +55,7 @@ module.exports = function(grunt) {
           ]
         }
       }
-    },
+    }/*,
     css_img_2_data_uri: {
       options: {
           files: [
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
               }
           ]
       }
-    }
+    }*/
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
