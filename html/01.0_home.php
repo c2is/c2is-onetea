@@ -3,16 +3,17 @@
     $lang = 'fr';
     include('includes/inc_header.php');
 ?>
-	<div class="wrap" id="wrap">
 
-        <?php include('includes/top.php'); ?>
+    <?php include('includes/top.php'); ?>
 
-        <section class="clearer">
-            <p>Content goes here</p>
-        </section>
+    <main class="main" role="main">
 
-        <?php include('includes/bottom.php'); ?>
+    </main>
 
-	</div>
+    <aside class="sidebar" role="complementary">
+
+    </aside>
+
+    <?php include('includes/bottom.php'); ?>
 
 <?php include('includes/inc_footer.php'); ?>

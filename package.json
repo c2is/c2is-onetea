@@ -1,11 +1,21 @@
 {
   "name": "c2is-onetea",
+  "title": "Front-end Project Quick Init",
+  "url": "http://github.com/c2is/c2is-onetea",
+  "author": "C2iS - front-end team",
+  "copyright": "2013",
   "version": "2.0.0",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/c2is/c2is-onetea.git"
+  },
   "devDependencies": {
+    "bower": "~1.2.6",
+    "grunt": "~0.4.1",
     "grunt-contrib-watch": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-recess": "latest",
-    "grunt-smushit": "latest",
-    "grunt-css-img-2-data-uri": "latest"
+    "grunt-autoprefixer": "~0.3.0",
+    "matchdep": "~0.1.2"
   }
 }

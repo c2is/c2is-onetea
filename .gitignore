@@ -1,2 +1,13 @@
-/.idea/
-/node_modules/
+# c2is-onetea
+# http://github.com/c2is/c2is-onetea
+# @author C2iS - front-end team
+
+# IDE
+/.idea
+
+# nodeJS npm
+
+# not wanted files
+node_modules
+.DS_Store
+.tmp

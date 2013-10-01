@@ -1,7 +1,10 @@
-/* Project: NOMPROJET - Date: 20120806 - Author: C2iS.fr > TRI */
+(function ($, window, document, undefined) {
+'use strict';
 
-(function($) {
-	// Do JS
-}(jQuery));
+$(function () {
 
+    // Let's OneTea dance!
 
+});
+
+})(jQuery, window, document);

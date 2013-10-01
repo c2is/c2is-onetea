@@ -1,10 +1,47 @@
-/*global module:false*/
+/*!
+ * c2is-onetea Gruntfile
+ * http://github.com/c2is/c2is-onetea
+ * @author C2iS - front-end team
+ */
+'use strict';
+
+/**
+ * Grunt module
+ */
 module.exports = function(grunt) {
 
-  // Project configuration.
+  /**
+   * Dynamically load npm tasks
+   */
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
+  /**
+   * c2is-onetea Grunt config
+   */
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    /**
+     * Project banner
+     * Dynamically appended to CSS/JS files
+     * Inherits text from package.json
+     */
+    tag: {
+      banner: '/*!\n' +
+              ' * <%= pkg.name %>\n' +
+              ' * <%= pkg.title %>\n' +
+              ' * <%= pkg.url %>\n' +
+              ' * @author <%= pkg.author %>\n' +
+              ' * @version <%= pkg.version %>\n' +
+              ' * Copyright <%= pkg.copyright %>\n' +
+              ' */\n'
+    },
+
+    /**
+     * Runs tasks against changed watched files
+     * https://github.com/gruntjs/grunt-contrib-watch
+     * Watching development files and run concat/compile tasks
+     */
     watch: {
       less: {
         files: 'less/*.less',
@@ -15,24 +52,43 @@ module.exports = function(grunt) {
         tasks: ['minjs']
       }
     },
-	
-	smushit:{
-	  path: {
-		src:'images/common'
-	  }
-	},
 
+    /**
+     * Autoprefixer
+     * Adds vendor prefixes if need automatcily
+     * https://github.com/nDmitry/grunt-autoprefixer
+     */
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 version', 'safari 6', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+      },
+      css: {
+        files: {
+          'css/screen.css': ['css/screen.noprefix.css']
+        }
+      }
+    },
+
+    /**
+     * Uglify (minify) JavaScript files
+     * https://github.com/gruntjs/grunt-contrib-uglify
+     * Compresses and minifies all JavaScript files into one
+     */
     uglify: {
+      options: {
+        banner: '<%= tag.banner %>'
+      },
       modernizr: {
         src: 'vendors/modernizr/modernizr.js',
         dest: 'js/min/modernizr.min.js'
       },
-      vendors: {
+      /*vendors: {
         src: [
-          'vendors/jquery/jquery.js'
+          'vendors/...
         ],
-        dest: 'js/min/vendors.min.js'
-      }, 
+        dest: 'js/min/...
+      },
+      */
 	  front: {
 		src: [
 			'js/front.js'
@@ -41,48 +97,31 @@ module.exports = function(grunt) {
 	  }
     },
 
+    /**
+     * recess
+     * LESS/CSS minification
+     * https://github.com/sindresorhus/grunt-recess
+     */
     recess: {
       dist: {
         options: {
+          banner: '<%= tag.banner %>',
 		  compile: true
         },
         files: {
-          'css/screen.css': [
+          'css/screen.noprefix.css': [
 			'vendors/normalize-css/normalize.css'
             , 'less/screen.less'
-//            , 'less/output.less'
-//            , 'less/output2.less'
+            //, 'less/output.less'
+            //, 'less/output2.less'
           ]
         }
-      }
-    },
-    css_img_2_data_uri: {
-      options: {
-          files: [
-              {
-                  src: 'vendors/plugin/plugin.css', //fichier css du plugin appelant des images
-                  dest: 'less/output.less'   //fichier de sortie qu'il faudra inclure
-              },
-              {
-                  src: 'vendors/plugin2/plugin2.css', //fichier css du plugin appelant des images
-                  dest: 'less/output2.less'   //fichier de sortie qu'il faudra inclure
-              }
-          ]
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-recess');
-  grunt.loadNpmTasks('grunt-smushit');
-  grunt.loadNpmTasks('grunt-css-img-2-data-uri');
-
-  grunt.registerTask('default', ['recess','uglify']);
-  grunt.registerTask('mincss', 'recess');
-  grunt.registerTask('minjs', 'uglify');
-  grunt.registerTask('minjs:vendors', 'uglify:vendors');
-  grunt.registerTask('minjs:front', 'uglify:front');
-  grunt.registerTask('minjscss', ['recess','uglify:front']);
-  grunt.registerTask('plugins', 'css_img_2_data_uri');
+  grunt.registerTask('default', ['mincss','minalljs']);
+  grunt.registerTask('mincss', ['recess', 'autoprefixer']);
+  grunt.registerTask('minalljs', 'uglify');
+  grunt.registerTask('minjs', 'uglify:front');
 };
