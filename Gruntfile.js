@@ -38,6 +38,54 @@ module.exports = function(grunt) {
     },
 
     /**
+     * Uglify (minify) JavaScript files
+     * https://github.com/gruntjs/grunt-contrib-uglify
+     * Compresses and minifies all JavaScript files into one
+     */
+    uglify: {
+      options: {
+        banner: '<%= tag.banner %>'
+      },
+      modernizr: {
+        src: 'vendors/modernizr/modernizr.js',
+        dest: 'js/min/modernizr.min.js'
+      },
+      /*vendors: { src: [
+          'vendors/....js
+         //,'vendors/....js
+        ],
+        dest: 'js/min/...
+      },
+      */
+	  front: {
+		src: 'js/front.js',
+		dest: 'js/min/front.min.js'
+	  }
+    },
+
+    /**
+     * recess
+     * LESS/CSS minification
+     * https://github.com/sindresorhus/grunt-recess
+     */
+    recess: {
+      dist: {
+        options: {
+          banner: '<%= tag.banner %>',
+		  compile: true
+        },
+        files: {
+          'css/screen.noprefix.css': [
+			'vendors/normalize-css/normalize.css'
+            , 'less/screen.less'
+            //, 'less/output.less'
+            //, 'less/output2.less'
+          ]
+        }
+      }
+    },
+
+    /**
      * Runs tasks against changed watched files
      * https://github.com/gruntjs/grunt-contrib-watch
      * Watching development files and run concat/compile tasks
@@ -67,57 +115,8 @@ module.exports = function(grunt) {
           'css/screen.css': ['css/screen.noprefix.css']
         }
       }
-    },
-
-    /**
-     * Uglify (minify) JavaScript files
-     * https://github.com/gruntjs/grunt-contrib-uglify
-     * Compresses and minifies all JavaScript files into one
-     */
-    uglify: {
-      options: {
-        banner: '<%= tag.banner %>'
-      },
-      modernizr: {
-        src: 'vendors/modernizr/modernizr.js',
-        dest: 'js/min/modernizr.min.js'
-      },
-      /*vendors: {
-        src: [
-          'vendors/...
-        ],
-        dest: 'js/min/...
-      },
-      */
-	  front: {
-		src: [
-			'js/front.js'
-		],
-		dest: 'js/min/front.min.js'
-	  }
-    },
-
-    /**
-     * recess
-     * LESS/CSS minification
-     * https://github.com/sindresorhus/grunt-recess
-     */
-    recess: {
-      dist: {
-        options: {
-          banner: '<%= tag.banner %>',
-		  compile: true
-        },
-        files: {
-          'css/screen.noprefix.css': [
-			'vendors/normalize-css/normalize.css'
-            , 'less/screen.less'
-            //, 'less/output.less'
-            //, 'less/output2.less'
-          ]
-        }
-      }
     }
+
   });
 
   grunt.registerTask('default', ['mincss','minalljs']);
