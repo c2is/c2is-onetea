@@ -10,8 +10,8 @@
     "url": "http://github.com/c2is/c2is-onetea.git"
   },
   "devDependencies": {
-    "bower": "~1.2.6",
-    "grunt": "~0.4.1",
+    //"bower": "~1.2.6", // décommneter si bower n'est pas installé de manière global'
+    //"grunt": "~0.4.1", // décommneter si grunt n'est pas installé de manière global'
     "grunt-contrib-watch": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-recess": "latest",
