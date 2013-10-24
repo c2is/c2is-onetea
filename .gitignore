@@ -6,8 +6,8 @@
 /.idea
 
 # nodeJS npm
+node_modules
 
 # not wanted files
-node_modules
 .DS_Store
 .tmp
