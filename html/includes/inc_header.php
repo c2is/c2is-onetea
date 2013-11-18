@@ -13,7 +13,14 @@
 
     <link href="../css/screen.css" rel="stylesheet">
 
-    <?php // modernizr? : <script src="../js/min/modernizr.min.js"></script>  ?>
+    <?php /* modernizr? : 
+    <script src="../js/min/modernizr.min.js"></script>  
+    <script>
+        window.html5.elements = 'main';
+        window.html5.shivDocument(document);
+    </script>
+    */
+    ?>
 
 </head>
 <body>
