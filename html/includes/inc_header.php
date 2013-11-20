@@ -1,5 +1,9 @@
 <?php /*include('functions.php'); */ // Functions examples: isAjax - isHomePage ?>
 <!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <html class="no-js" lang="<?php echo $lang ?>">
 <head>
     <meta charset="utf-8">
@@ -13,13 +17,7 @@
 
     <link href="../css/screen.css" rel="stylesheet">
 
-    <?php /* modernizr? : 
-    <script src="../js/min/modernizr.min.js"></script>  
-    <script>
-        window.html5.elements = 'main';
-        window.html5.shivDocument(document);
-    </script>
-    */
+    <?php /* modernizr? : <script src="../js/min/modernizr.min.js"></script> */
     ?>
 
 </head>
