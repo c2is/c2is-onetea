@@ -69,18 +69,26 @@ module.exports = function(grunt) {
      * https://github.com/sindresorhus/grunt-recess
      */
     recess: {
-      dist: {
+      less: {
         options: {
-          banner: '<%= tag.banner %>',
-		  compile: true
+	  compile: true
         },
         files: {
-          'css/screen.noprefix.css': [
-			'vendors/normalize-css/normalize.css'
+          'css/screen.css': [
+	    'vendors/normalize-css/normalize.css'
             , 'less/screen.less'
             //, 'less/output.less'
             //, 'less/output2.less'
           ]
+        }
+      }, 
+      min: {
+      	options: {
+      	  banner: '<%= tag.banner %>',
+	  compress: true
+      	},
+        files: {
+          'css/screen.css': ['css/screen.css']
         }
       }
     },
@@ -112,7 +120,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: {
-          'css/screen.css': ['css/screen.noprefix.css']
+          'css/screen.css': ['css/screen.css']
         }
       }
     }
@@ -120,7 +128,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['mincss','minalljs']);
-  grunt.registerTask('mincss', ['recess', 'autoprefixer']);
+  grunt.registerTask('mincss', ['recess:less', 'autoprefixer', 'recess:min']);
   grunt.registerTask('minalljs', 'uglify');
   grunt.registerTask('minjs', 'uglify:front');
 };
