@@ -53,8 +53,8 @@ module.exports = function(grunt) {
          */
         uglify: {
             modernizr: {
-                src: 'vendors/modernizr/modernizr.js',
-                dest: 'js/min/modernizr.min.js'
+                src: 'web/vendors/modernizr/modernizr.js',
+                dest: 'web/js/min/modernizr.min.js'
             },
             /*vendors: { src: [
              'vendors/....js
@@ -64,8 +64,8 @@ module.exports = function(grunt) {
              },
              */
             front: {
-                src: 'js/front.js',
-                dest: 'js/min/front.min.js'
+                src: 'web/js/front.js',
+                dest: 'web/js/min/front.min.js'
             }
         },
 

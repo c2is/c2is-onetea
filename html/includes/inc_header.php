@@ -15,7 +15,7 @@
 
     <link href="//www.google-analytics.com" rel="dns-prefetch">
 
-    <link href="../css/screen.css" rel="stylesheet">
+    <link href="../web/css/screen.css" rel="stylesheet">
 
     <?php /* modernizr? : <script src="../js/min/modernizr.min.js"></script> */
     ?>
