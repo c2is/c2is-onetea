@@ -5,6 +5,7 @@
   "author": "C2iS - front-end team",
   "copyright": "2013",
   "version": "2.0.0",
+  "path": "",
   "repository": {
     "type": "git",
     "url": "http://github.com/c2is/c2is-onetea.git"
@@ -13,7 +14,7 @@
     "grunt-contrib-watch": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-recess": "latest",
-    "grunt-autoprefixer": "~0.3.0",
+    "grunt-autoprefixer": "latest",
     "matchdep": "~0.1.2"
   }
 }

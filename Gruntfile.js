@@ -10,125 +10,129 @@
  */
 module.exports = function(grunt) {
 
-  /**
-   * Dynamically load npm tasks
-   */
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
-  /**
-   * c2is-onetea Grunt config
-   */
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+    /**
+     * Dynamically load npm tasks
+     */
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     /**
-     * Project banner
-     * Dynamically appended to CSS/JS files
-     * Inherits text from package.json
+     * c2is-onetea Grunt config
      */
-    tag: {
-      banner: '/*!\n' +
-              ' * <%= pkg.name %>\n' +
-              ' * <%= pkg.title %>\n' +
-              ' * <%= pkg.url %>\n' +
-              ' * @author <%= pkg.author %>\n' +
-              ' * @version <%= pkg.version %>\n' +
-              ' * Copyright <%= pkg.copyright %>\n' +
-              ' */\n'
-    },
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
 
-    /**
-     * Uglify (minify) JavaScript files
-     * https://github.com/gruntjs/grunt-contrib-uglify
-     * Compresses and minifies all JavaScript files into one
-     */
-    uglify: {
-      options: {
-        banner: '<%= tag.banner %>'
-      },
-      modernizr: {
-        src: 'vendors/modernizr/modernizr.js',
-        dest: 'js/min/modernizr.min.js'
-      },
-      /*vendors: { src: [
-          'vendors/....js
-         //,'vendors/....js
-        ],
-        dest: 'js/min/...
-      },
-      */
-	  front: {
-		src: 'js/front.js',
-		dest: 'js/min/front.min.js'
-	  }
-    },
-
-    /**
-     * recess
-     * LESS/CSS minification
-     * https://github.com/sindresorhus/grunt-recess
-     */
-    recess: {
-      less: {
-        options: {
-	  compile: true
+        /**
+         * Project banner
+         * Dynamically appended to CSS/JS files
+         * Inherits text from package.json
+         */
+        tag: {
+            banner: '/*!\n' +
+                ' * <%= pkg.name %>\n' +
+                ' * <%= pkg.title %>\n' +
+                ' * <%= pkg.url %>\n' +
+                ' * @author <%= pkg.author %>\n' +
+                ' * @version <%= pkg.version %>\n' +
+                ' * Copyright <%= pkg.copyright %>\n' +
+                ' */\n'
         },
-        files: {
-          'css/screen.css': [
-	    'vendors/normalize-css/normalize.css'
-            , 'less/screen.less'
-            //, 'less/output.less'
-            //, 'less/output2.less'
-          ]
+
+        /**
+         * Uglify (minify) JavaScript files
+         * https://github.com/gruntjs/grunt-contrib-uglify
+         * Compresses and minifies all JavaScript files into one
+         */
+        uglify: {
+            options: {
+                banner: '<%= tag.banner %>'
+            },
+            modernizr: {
+                src: '<%= pkg.path %>vendors/modernizr/modernizr.js',
+                dest: '<%= pkg.path %>js/min/modernizr.min.js'
+            },
+            /*vendors: { src: [
+             'vendors/....js
+             //,'vendors/....js
+             ],
+             dest: '<%= pkg.path %>js/min/...
+             },
+             */
+            front: {
+                src: '<%= pkg.path %>js/front.js',
+                dest: '<%= pkg.path %>js/min/front.min.js'
+            }
+        },
+
+        /**
+         * recess
+         * LESS/CSS minification
+         * https://github.com/sindresorhus/grunt-recess
+         */
+        recess: {
+            less2css: {
+                options: {
+                    compile: true
+                },
+                files: {
+                    '<%= pkg.path %>css/screen.css': [
+                        '<%= pkg.path %>vendors/normalize-css/normalize.css'
+                        ,'<%= pkg.path %>less/screen.less'
+                        //,'<%= pkg.path %>less/output.less'
+                        //,'<%= pkg.path %>less/output2.less'
+                    ],
+                    '<%= pkg.path %>css/print.css': ['<%= pkg.path %>less/print.less']
+                }
+            },
+            mincss: {
+                options: {
+                    banner: '<%= tag.banner %>',
+                    compress: true
+                },
+                files: {
+                    '<%= pkg.path %>css/screen.css': ['<%= pkg.path %>css/screen.css'],
+                    '<%= pkg.path %>css/print.css': ['<%= pkg.path %>css/print.css']
+                }
+            }
+        },
+
+        /**
+         * Runs tasks against changed watched files
+         * https://github.com/gruntjs/grunt-contrib-watch
+         * Watching development files and run concat/compile tasks
+         */
+        watch: {
+            less: {
+                files: '<%= pkg.path %>less/*.less',
+                tasks: ['mincss']
+            },
+            js: {
+                files: '<%= pkg.path %>js/*.js',
+                tasks: ['minjs']
+            }
+        },
+
+        /**
+         * Autoprefixer
+         * Adds vendor prefixes if need automatcily
+         * https://github.com/nDmitry/grunt-autoprefixer
+         */
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 version', 'safari 6', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+            },
+            css: {
+                files: {
+                    '<%= pkg.path %>css/screen.css': ['<%= pkg.path %>css/screen.css'],
+                    '<%= pkg.path %>css/print.css': ['<%= pkg.path %>css/print.css']
+                }
+            }
         }
-      }, 
-      min: {
-      	options: {
-      	  banner: '<%= tag.banner %>',
-	  compress: true
-      	},
-        files: {
-          'css/screen.css': ['css/screen.css']
-        }
-      }
-    },
 
-    /**
-     * Runs tasks against changed watched files
-     * https://github.com/gruntjs/grunt-contrib-watch
-     * Watching development files and run concat/compile tasks
-     */
-    watch: {
-      less: {
-        files: 'less/*.less',
-        tasks: ['mincss']
-      },
-      js: {
-        files: 'js/*.js',
-        tasks: ['minjs']
-      }
-    },
+    });
 
-    /**
-     * Autoprefixer
-     * Adds vendor prefixes if need automatcily
-     * https://github.com/nDmitry/grunt-autoprefixer
-     */
-    autoprefixer: {
-      options: {
-        browsers: ['last 2 version', 'safari 6', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
-      },
-      css: {
-        files: {
-          'css/screen.css': ['css/screen.css']
-        }
-      }
-    }
-
-  });
-
-  grunt.registerTask('default', ['mincss','minalljs']);
-  grunt.registerTask('mincss', ['recess:less', 'autoprefixer', 'recess:min']);
-  grunt.registerTask('minalljs', 'uglify');
-  grunt.registerTask('minjs', 'uglify:front');
+    grunt.registerTask('default', ['mincss','minalljs']);
+    //grunt.registerTask('mincss', ['recess:less2css', 'autoprefixer', 'recess:mincss']); // activer à la mise en prod
+    grunt.registerTask('mincss', ['recess:less2css', 'autoprefixer']);
+    grunt.registerTask('minalljs', 'uglify');
+    grunt.registerTask('minjs', 'uglify:front');
 };
