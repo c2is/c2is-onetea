@@ -74,13 +74,13 @@ module.exports = function(grunt) {
                     compile: true
                 },
                 files: {
-                    '<%= pkg.path %>css/screen.css': [
+                    '<%= pkg.path %>css/screen.min.css': [
                         '<%= pkg.path %>vendors/normalize-css/normalize.css'
                         ,'<%= pkg.path %>less/screen.less'
                         //,'<%= pkg.path %>less/output.less'
                         //,'<%= pkg.path %>less/output2.less'
                     ],
-                    '<%= pkg.path %>css/print.css': ['<%= pkg.path %>less/print.less']
+                    '<%= pkg.path %>css/print.min.css': ['<%= pkg.path %>less/print.less']
                 }
             },
             mincss: {
@@ -89,8 +89,8 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    '<%= pkg.path %>css/screen.css': ['<%= pkg.path %>css/screen.css'],
-                    '<%= pkg.path %>css/print.css': ['<%= pkg.path %>css/print.css']
+                    '<%= pkg.path %>css/screen.min.css': ['<%= pkg.path %>css/screen.min.css'],
+                    '<%= pkg.path %>css/print.min.css': ['<%= pkg.path %>css/print.min.css']
                 }
             }
         },
@@ -122,8 +122,8 @@ module.exports = function(grunt) {
             },
             css: {
                 files: {
-                    '<%= pkg.path %>css/screen.css': ['<%= pkg.path %>css/screen.css'],
-                    '<%= pkg.path %>css/print.css': ['<%= pkg.path %>css/print.css']
+                    '<%= pkg.path %>css/screen.min.css': ['<%= pkg.path %>css/screen.min.css'],
+                    '<%= pkg.path %>css/print.min.css': ['<%= pkg.path %>css/print.min.css']
                 }
             }
         }
