@@ -20,7 +20,7 @@ closedir($dir);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
+    <link rel="icon" type="image/ico" href="../favicon.ico">
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{PROJECT NAME}</title>
