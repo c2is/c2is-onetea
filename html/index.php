@@ -7,7 +7,7 @@ $fichier= array(); // on déclare le tableau contenant le nom des fichiers
 $dossier= array(); // on déclare le tableau contenant le nom des dossiers
 
 while($element = readdir($dir)) {
-    if($element != '.' && $element != '..' && $element != 'index.php' && $element != '.idea') {
+    if($element != '.' && $element != '..' && $element != 'index.php' && $element != '.idea' && $element != '.DS_Store') {
         if (!is_dir($dir_nom.'/'.$element)) {$fichier[] = $element;}
         else {$dossier[] = $element;}
     }
