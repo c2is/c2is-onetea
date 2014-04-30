@@ -45,7 +45,7 @@ closedir($dir);
 			closedir($dirRoot);
 			?>
 		}
-        a {color:inherit; }
+        a {color:inherit; transition: all 0.3s ease-out;}
         a:hover {background-color:#e8e8e8;color:#<?php echo $colorProject ?>;}
         header {overflow:hidden;padding:30px 130px 20px;}
 		header img{float:right;}
