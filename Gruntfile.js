@@ -33,7 +33,8 @@ module.exports = function(grunt) {
                 ' * <%= pkg.url %>\n' +
                 ' * @author <%= pkg.author %>\n' +
                 ' * @version <%= pkg.version %>\n' +
-                ' * Copyright <%= pkg.copyright %>\n' +
+                ' * <%= grunt.template.today("yyyymmdd") %>\n' +
+                ' * Copyright <%= grunt.template.today("yyyy") %>\n' +
                 ' */\n'
         },
 
@@ -44,6 +45,8 @@ module.exports = function(grunt) {
          */
         uglify: {
             options: {
+                //mangle:false, // activer ces 2 lignes pour voir la version non minifiée
+                //beautify:true,
                 banner: '<%= tag.banner %>'
             },
             modernizr: {
