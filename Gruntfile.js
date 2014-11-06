@@ -105,8 +105,8 @@ module.exports = function(grunt) {
          */
         watch: {
             options: {
-                atBegin: true 
-                //,livereload: true
+                //atBegin: true,
+                //livereload: true
             },
             less: {
                 files: '<%= pkg.path %>less/*.less',

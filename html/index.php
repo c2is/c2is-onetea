@@ -40,7 +40,7 @@ closedir($dir_design);
     <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Index - Relais &amp; Châteaux</title>
+    <title>Index - OneTea</title>
 
     <meta name="description" content="">
     <meta name="author" content="C2iS">
