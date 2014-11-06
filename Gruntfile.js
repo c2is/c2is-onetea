@@ -104,6 +104,10 @@ module.exports = function(grunt) {
          * Watching development files and run concat/compile tasks
          */
         watch: {
+            options: {
+                atBegin: true 
+                //,livereload: true
+            },
             less: {
                 files: '<%= pkg.path %>less/*.less',
                 tasks: ['mincss']
