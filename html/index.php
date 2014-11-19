@@ -101,32 +101,44 @@ closedir($dir_design);
     <script type="text/javascript" src="index/index-js/intense.min.js"></script>
     <script type="text/javascript">
         (function ($, window, document, undefined) {
-        'use strict';
-        $(window).load(function(){
-            $('.design-wrap').isotope({
-              itemSelector: '.item'
-            });
-            var filterValue = '.item';
-            // bind filter button click
-            $('.filters').on( 'click', 'button', function() {
-                $('.btn-filter').removeClass('active');
-                $(this).addClass('active');
-                filterValue = $( this ).attr('data-filter');
-                $('.design-wrap').isotope({ filter: filterValue });
-            });
+            'use strict';
 
-            $('.filters').on( 'change', 'select', function() {
-                $('.design-wrap').attr({ 'data-col': $(this).val() });
-                $('.design-wrap').isotope({ filter: filterValue });
-            });
+            $(window).load(function(){
 
-            //intenseJS
-            var element = $('.design-wrap .item img');
-            Intense( element );
-        })
-        // $(function () {
-            
-        // });
+                // Localstorage layout preferences
+                if(localStorage && localStorage.getItem('layout')){
+                    $('.design-wrap').attr({ 'data-col': localStorage.getItem('layout') });
+                    $('.filters select').val(localStorage.getItem('layout'));
+                } else {
+                    $('.design-wrap').attr({ 'data-col': 'twoCols' });
+                    $('.filters select').val('twoCols'); 
+                }
+
+                // Isotope
+                $('.design-wrap').isotope({
+                  itemSelector: '.item'
+                });
+                var filterValue = '.item';
+
+                // Filters pages
+                $('.filters').on( 'click', 'button', function() {
+                    $('.btn-filter').removeClass('active');
+                    $(this).addClass('active');
+                    filterValue = $( this ).attr('data-filter');
+                    $('.design-wrap').isotope({ filter: filterValue });
+                });
+
+                // Layout select
+                $('.filters').on( 'change', 'select', function() {
+                    localStorage.setItem('layout', $(this).val());
+                    $('.design-wrap').attr({ 'data-col': $(this).val() });
+                    $('.design-wrap').isotope({ filter: filterValue });
+                });
+
+                // IntenseJS
+                var element = $('.design-wrap .item img');
+                Intense( element );
+            })
 
         })(jQuery, window, document);
     </script>
@@ -173,13 +185,13 @@ closedir($dir_design);
                 ?>
                 <select>
                     <option value="oneCol">1 colonne</option>
-                    <option value="twoCols" selected>2 colonnes</option>
+                    <option value="twoCols">2 colonnes</option>
                     <option value="threeCols">3 colonnes</option>
                     <option value="fourCols">4 colonnes</option>
                 </select>
             </div>
         </div>
-        <div class="design-wrap" data-col="twoCols">
+        <div class="design-wrap" data-col="">
             <?php 
             if(!empty($fichier_design)){
                 sort($fichier_design);
