@@ -8,6 +8,7 @@
 # nodeJS npm
 node_modules
 npm-*.log
+grunt.settings.local.json
 
 # not wanted files
 .DS_Store

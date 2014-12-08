@@ -8,12 +8,5 @@
   "repository": {
     "type": "git",
     "url": "http://github.com/c2is/c2is-onetea.git"
-  },
-  "devDependencies": {
-    "grunt-contrib-watch": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-recess": "latest",
-    "grunt-autoprefixer": "latest",
-    "matchdep": "latest"
   }
 }
