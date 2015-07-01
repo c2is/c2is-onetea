@@ -9,7 +9,7 @@
 node_modules
 npm-*.log
 
-# not wanted files
+# OS specific
 .DS_Store
 */.DS_Store
 .tmp

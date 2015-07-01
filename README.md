@@ -9,3 +9,5 @@ Une page html (php, avec ses includes pour le header et le footer), un dossier c
 
 ## Mise en place
 Pour mettre en place C2iS-OneTea, vous pouvez vous référer [à la documentation (wiki)](https://github.com/c2is/c2is-onetea/wiki) ( https://github.com/c2is/c2is-onetea/wiki )
+
+... importer/updater le process d'install ici
