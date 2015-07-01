@@ -1,5 +1,4 @@
 # c2is-onetea
-=====
 
 ## Objectifs
 L'objectif de C2iS-OneTea est de mettre en place un kick-off, un kick starter, un boilerplate, un bootstrap, etc., enfin peu importe le nom, l'objectif est d'avoir une structure simple, rapide à déployer.
