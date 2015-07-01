@@ -1,9 +1,0 @@
-{
-    "name": "c2is-onetea",
-    "version": "2.0.0",
-    "dependencies": {
-        "modernizr": "latest",
-        "jquery": "~1.11.1",
-        "normalize-css": "latest"
-    }
-}
