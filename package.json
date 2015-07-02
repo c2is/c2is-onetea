@@ -4,8 +4,8 @@
   "url": "http://github.com/c2is/c2is-onetea",
   "author": "C2iS - front-end team",
   "version": "3.0.0",
-  "pathDev": "app/Resources/C2isOneTeaBundle/assets/",
-  "pathProd": "web/",
+  "pathDev": "/",
+  "pathProd": "/",
   "repository": {
     "type": "git",
     "url": "http://github.com/c2is/c2is-onetea.git"
@@ -17,6 +17,8 @@
     "grunt-contrib-less": "~1.0.1",
     "grunt-contrib-uglify": "~0.9.1",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-autoprefixer": "~3.0.3"
+    "grunt-autoprefixer": "~3.0.3",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-jscs": "^1.8.0"
   }
 }

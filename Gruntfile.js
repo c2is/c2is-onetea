@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         },
         files: {
           '<%= pkg.pathProd %>css/front/screen.css': [
-              '<%= pkg.pathDev %>vendors/normalize-css/normalize.css',
+              //'<%= pkg.pathDev %>vendors/normalize-css/normalize.css',
               '<%= pkg.pathDev %>less/screen.less'
           ]
         }
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: {
-          '<%= pkg.pathProd %>css/front/screen.css': '<%= pkg.pathProd %>css/front/screen.css'
+          '<%= pkg.pathProd %>css/front/screen.min.css': '<%= pkg.pathProd %>css/front/screen.min.css'
         }
       }
     },
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     cssmin: {
       screen: {
         files: {
-            '<%= pkg.pathProd %>css/front/screen.min.css': '<%= pkg.pathProd %>css/front/screen.css'
+            '<%= pkg.pathProd %>css/front/screen.min.css': '<%= pkg.pathProd %>css/front/screen.min.css'
         }
       }
     },
