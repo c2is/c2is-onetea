@@ -7,6 +7,8 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+  pkg: grunt.file.readJSON('package.json'),
+
   /* LESS
     ================================================================= */
     less: {
@@ -20,7 +22,7 @@ module.exports = function(grunt) {
           ,strictMath: true
         },
         files: {
-          '<%= pkg.pathProd %>css/front/screen.css': [
+          '<%= pkg.pathProd %>css/front/screen.min.css': [
               //'<%= pkg.pathDev %>vendors/normalize-css/normalize.css',
               '<%= pkg.pathDev %>less/screen.less'
           ]
