@@ -5,13 +5,51 @@
 
 /* Clearer
    ========================================================================== */
-._clearer() {
-  &:after,
-  &:before {
-    content: " ";
-    display: table;
+  .clearer {
+    ._clearer();
   }
-  &:after {
-    clear: both;
+
+
+/* Case
+   ========================================================================== */
+  .uppercase { text-transform: uppercase; }
+  .lowercase { text-transform: lowercase; }
+  .capitalize {
+    text-transform: lowercase;
+    &:first-letter {
+      text-transform: uppercase;
+    }
   }
-}
+
+
+/* Alignment / float
+   ========================================================================== */
+  .alignLeft { text-align: left; }
+  .alignRight { text-align: right; }
+  .alignCenter { text-align: center; }
+
+  .floatLeft { float: left; }
+  .floatRight { float: right; }
+
+
+/* Font
+   ========================================================================== */
+  .fwBold { font-weight: 700; }
+  .fwLight { font-weight: 300; }
+  .fwNormal { font-weight: 400; }
+
+  .fsItalic { font-style: italic; }
+  .fsNormal { font-style: normal; }
+
+
+/* Image responsive
+   ========================================================================== */
+  .img-responsive {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+/* Hidden
+   ========================================================================== */
+  .is-hidden { display: none !important; }

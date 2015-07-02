@@ -5,6 +5,13 @@
 
 /* Clearer
    ========================================================================== */
-  .clearer {
-    ._clearer();
+  ._clearer() {
+    &:after,
+    &:before {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
   }
