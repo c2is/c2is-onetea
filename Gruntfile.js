@@ -22,7 +22,7 @@ module.exports = function(grunt) {
           ,strictMath: true
         },
         files: {
-          '<%= pkg.pathProd %>css/front/screen.min.css': [
+          '<%= pkg.pathProd %>css/front/screen.css': [
               //'<%= pkg.pathDev %>vendors/normalize-css/normalize.css',
               '<%= pkg.pathDev %>less/screen.less'
           ]
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: {
-          '<%= pkg.pathProd %>css/front/screen.min.css': '<%= pkg.pathProd %>css/front/screen.min.css'
+          '<%= pkg.pathProd %>css/front/screen.css': '<%= pkg.pathProd %>css/front/screen.css'
         }
       }
     },
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
     cssmin: {
       screen: {
         files: {
-            '<%= pkg.pathProd %>css/front/screen.min.css': '<%= pkg.pathProd %>css/front/screen.min.css'
+            '<%= pkg.pathProd %>css/front/screen.min.css': '<%= pkg.pathProd %>css/front/screen.css'
         }
       }
     },
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          '<%= pkg.pathProd %>js/front/vendors.min.js': [
+          '<%= pkg.pathProd %>js/vendors.min.js': [
             //'<%= pkg.pathDev %>vendors/colorbox/jquery.colorbox.js'
           ]
         }
@@ -81,11 +81,11 @@ module.exports = function(grunt) {
           beautify: true
         },
         files: {
-          '<%= pkg.pathProd %>js/front/front.js': [
-            // '<%= pkg.pathDev %>js/global-variables.js',
-            // '<%= pkg.pathDev %>js/plugins.js',
-            // '<%= pkg.pathDev %>js/functions/*.js',
-            // '<%= pkg.pathDev %>js/front.js'
+          '<%= pkg.pathProd %>js/front.js': [
+            '<%= pkg.pathDev %>js/global-variables.js',
+            '<%= pkg.pathDev %>js/plugins/*.js',
+            '<%= pkg.pathDev %>js/functions/*.js',
+            '<%= pkg.pathDev %>js/front.js'
           ]
         }
       },
@@ -98,7 +98,7 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          '<%= pkg.pathProd %>js/front/front.min.js' : '<%= pkg.pathProd %>js/front/front.js'
+          '<%= pkg.pathProd %>js/front.min.js' : '<%= pkg.pathProd %>js/front.js'
         }
       }
     },
@@ -138,7 +138,7 @@ module.exports = function(grunt) {
         //, livereload: true
       },
       js: {
-        files: 'js/*.js',
+        files: ['js/*.js', 'js/functions/*.js', 'js/plugins/*.js'],
         tasks: ['default']
       },
       less: {
