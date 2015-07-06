@@ -120,7 +120,9 @@ module.exports = function(grunt) {
       },
       target: {
         src : [
-          'js/front.js'
+          'js/*.js',
+          'js/functions/*.js',
+          'js/plugins/*.js'
         ]
       }
     },
@@ -134,6 +136,8 @@ module.exports = function(grunt) {
       },
       main: [
         'js/*.js',
+        'js/functions/*.js',
+        'js/plugins/*.js'
       ]
     },
 
